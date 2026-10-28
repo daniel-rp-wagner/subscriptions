@@ -19,9 +19,11 @@ Ein periodisch erscheinendes Medium als Print, E-Paper oder als Kombination von 
 | Erscheinungsweise | leer bei unregelmäßiger Erscheinung¹            | monatlich                                          |
 | Erscheinungstag   | Wochentag, leer bei unregelmäßiger Erscheinung² | Mittwoch                                           |
 | Ausgaben          | Anzahl im Jahr; 1–365                           | 11                                                 |
+| Typ               | Medientyp³                                      | Print                                              |
 
 ¹ **Hinweis**: einer der Werte: _täglich, werktäglich, wöchentlich, 2x wöchentlich, 14-täglich, monatlich, 2-monatlich, quartalsweise_  
 ² **Hinweis**: einer der Werte: _Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag_
+³ **Hinweis**: einer der Werte: _Print, E-Paper, Kombination_
 
 **Beziehungen:**
 
