@@ -81,7 +81,7 @@ Ein Abonnement-Antrag repräsentiert den Wunsch eines Interessenten, ein Zeitsch
 | Zuzahlung               | Zuzahlung bei Sachprämie (0 = „Kein Betrag“); sonst leer     | 29.90         |
 
 ³ **Hinweis**: einer der Werte: _Sachprämie, Bargeld, Gutschein_.  
-⁶ **Hinweis**: einer der Werte: _Hauptprämie, Zugabeprämie, Bündelangebot_. Je Antrag gibt es jede Herkunft höchstens einmal.
+⁶ **Hinweis**: einer der Werte: _Hauptprämie, Zugabeprämie, Bündelangebot-Sachprämie, Bündelangebot-Geldwertprämie_. Je Antrag gibt es jede Herkunft höchstens einmal.
 
 Werte der Prämienzeilen je Herkunft:
 
