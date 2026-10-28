@@ -30,6 +30,7 @@ Zu jeder Zeitschrift wird bereitgestellt:
 * Zeitschrift.Erscheinungstag
 * Zeitschrift.Einzelpreis
 * Zeitschrift.Ausgaben
+* Zeitschrift.Typ
 * Alle der Zeitschrift zugewiesenen Zeitschriften-Kategorien (Liste), je Kategorie:
   * Zeitschriften-Kategorie.Id
   * Zeitschriften-Kategorie.Name
@@ -107,6 +108,7 @@ Zu jeder Zeitschrift wird bereitgestellt:
 * Zeitschrift.Id
 * Zeitschrift.Bild
 * Zeitschrift.Name
+* Zeitschrift.Typ
 
 Zur Zeitschriften-Kategorie wird bereitgestellt:
 
@@ -172,6 +174,7 @@ Zu jeder Zeitschrift wird bereitgestellt:
 * Zeitschrift.Id
 * Zeitschrift.Bild
 * Zeitschrift.Name
+* Zeitschrift.Typ
 * Abonnement-Form.Mindestlaufzeit
 * Angebotspreis
 * Regulärer Preis
