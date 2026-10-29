@@ -151,7 +151,9 @@ Bei einem Abonnement über eine Abonnement-Form ergibt sich der Zahlungsrhythmus
 | 12 Monate       | jährlich                 |
 | 24 Monate       | 2 Jahre, danach jährlich |
 
-Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Monate“ ergibt sich der Zahlungsrhythmus nach Bündelangebot.Laufzeit in Monaten.
+Bei einem Bündelangebot ist Bündelangebot.Laufzeit in Monaten immer gesetzt. Es bestimmt bei Zeitraum „Monate“ sowohl die Angebotslaufzeit als auch den anschließenden Abrechnungsrhythmus. Bei Zeitraum „Ausgaben“ bestimmt es den Abrechnungsrhythmus nach der vereinbarten Anzahl von Ausgaben.
+
+Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Monate“ ergibt sich der Zahlungsrhythmus aus Bündelangebot.Laufzeit in Monaten.
 
 | Laufzeit        | Zahlungsrhythmus |
 | --------------- | ---------------- |
@@ -162,7 +164,11 @@ Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Monate“ ergibt sich 
 
 Bei „alle x Monate“ ist x die Bündelangebot.Laufzeit in Monaten.
 
-Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Ausgaben“ ist der Zahlungsrhythmus „einmalig“. Ergänze um den Hinweis „Nach x Ausgaben erfolgt die Berechnung “ gefolgt von dem Zahlungsrhythmus wie bei Bündelangebot.Zeitraum = „Monate“. Beispielsweise: „Zahlungsrhythmus: einmalig. Nach 5 Ausgaben erfolgt die Berechnung halbjährlich“.
+Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Ausgaben“ ist der Zahlungsrhythmus für das ursprüngliche Angebot „einmalig“. Nach Bündelangebot.Ausgaben Ausgaben erfolgt die weitere Abrechnung in dem durch Bündelangebot.Laufzeit in Monaten bestimmten Rhythmus gemäß obiger Tabelle.
+
+Der ausgegebene und im Antrag festgeschriebene Zahlungsrhythmus enthält bei Zeitraum „Ausgaben“ beide Angaben. Beispiel bei 5 Ausgaben und Laufzeit in Monaten = 6: „einmalig. Nach 5 Ausgaben erfolgt die Abrechnung halbjährlich“.
+
+Beispiel bei Zeitraum „Monate“ und Laufzeit in Monaten = 3: Der Zahlungsrhythmus lautet „vierteljährlich“; auch die anschließende Abrechnung erfolgt vierteljährlich.
 
 ### BR-006 Angebotsausgaben Bündelangebot
 Die Angebotsausgaben eines Bündelangebots richten sich nach Bündelangebot.Zeitraum:
@@ -173,6 +179,34 @@ Die Angebotsausgaben eines Bündelangebots richten sich nach Bündelangebot.Zeit
 | Ausgaben | `Bündelangebot.Ausgaben` |
 
 Angebotspreis und regulärer Preis eines Bündelangebots werden mit diesen Angebotsausgaben nach BR-003 berechnet.
+
+### BR-007 Bestellbarkeit prämienpflichtiger Kombinationen
+
+Eine aktive Kombination aus Zeitschrift und prämienpflichtiger Abonnement-Form (Abonnement-Form.Rabatt = 0) muss mindestens eine auswählbare Hauptprämie besitzen. Eine Hauptprämie ist auswählbar, wenn:
+
+1. die Prämie aktiv ist,
+2. die Prämie der Abonnement-Form zugeordnet ist,
+3. der Kombination Zeitschrift × Abonnement-Form eine Prämienbetragskategorie zugeordnet ist und
+4. für die Prämie in dieser Prämienbetragskategorie ein gültiger Prämienbetrag existiert.
+
+Bei der Stammdatenpflege werden Änderungen abgelehnt, die für eine Kombination aus aktiver Zeitschrift und aktiver prämienpflichtiger Abonnement-Form diese Voraussetzung verletzen würden. Das gilt insbesondere für Aktivierungen, Änderungen von Zuordnungen und Prämienbeträgen sowie das Entfernen oder Deaktivieren der letzten auswählbaren Hauptprämie. Das Fehlen einer auswählbaren Hauptprämie ist nur zulässig, solange die Zeitschrift oder die Abonnement-Form inaktiv ist; die Pflicht zur Prämienbetragskategorie bleibt unabhängig davon bestehen.
+
+Für rabattbasierte Abonnement-Formen (Abonnement-Form.Rabatt > 0) gilt diese Voraussetzung nicht.
+
+### BR-008 Mindestens eine Angebotsausgabe bei Standard-Abonnements
+
+Für jede aktive Kombination aus Zeitschrift und Abonnement-Form muss die Berechnung nach BR-001 mindestens eine Angebotsausgabe ergeben. Die Stammdatenpflege lehnt Änderungen ab, die diese Voraussetzung verletzen würden. Dies wird insbesondere bei Zuordnung oder Aktivierung von Zeitschrift und Abonnement-Form sowie bei Änderungen von Zeitschrift.Ausgaben oder Abonnement-Form.Mindestlaufzeit geprüft. Inaktive Stammdaten dürfen zur Vorbereitung unvollständig sein.
+
+### BR-009 Idempotente Antragseinreichung
+
+Jede Einreichung eines Abonnement-Antrags muss einen nicht leeren, für die jeweilige beabsichtigte Antragstellung eindeutigen `Idempotency-Key`-Header enthalten. Diese Regel gilt für Standard- und Bündelangebot-Bestellungen gleichermaßen.
+
+Bei der ersten erfolgreichen Einreichung wird der Schlüssel dauerhaft eindeutig der Antragsnummer und den fachlich normalisierten Eingabedaten zugeordnet.
+
+* Wird derselbe Schlüssel mit fachlich identischen Eingabedaten erneut verwendet, wird das ursprüngliche erfolgreiche Ergebnis einschließlich Antragsnummer zurückgegeben; es wird kein weiterer Antrag angelegt.
+* Wird derselbe Schlüssel mit abweichenden Eingabedaten erneut verwendet, wird die Einreichung mit „Idempotency-Key-Konflikt“ abgelehnt.
+* Gleichzeitige Einreichungen mit demselben Schlüssel dürfen höchstens einen Antrag erzeugen.
+* Für eine neue beabsichtigte Antragstellung muss ein neuer Schlüssel verwendet werden.
 
 ---
 
