@@ -156,11 +156,11 @@ Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Monate“ ergibt sich 
 | 3 Monate        | vierteljährlich  |
 | 6 Monate        | halbjährlich     |
 | 12 Monate       | jährlich         |
-| Sonstiges       | Alle x Monate    |
+| Sonstiges       | alle x Monate    |
 
-Bei „Alle x Monate“ ist x die Bündelangebot.Laufzeit in Monaten.
+Bei „alle x Monate“ ist x die Bündelangebot.Laufzeit in Monaten.
 
-Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Ausgaben“ ist der Zahlungsrhythmus „einmalig“.
+Bei einem Bündelangebot mit Bündelangebot.Zeitraum = „Ausgaben“ ist der Zahlungsrhythmus „einmalig“. Ergänze um den Hinweis „Nach x Ausgaben erfolgt die Berechnung “ gefolgt von dem Zahlungsrhythmus wie bei Bündelangebot.Zeitraum = „Monate“. Beispielsweise: „Zahlungsrhythmus: einmalig. Nach 5 Ausgaben erfolgt die Berechnung halbjährlich“.
 
 ### BR-006 Angebotsausgaben Bündelangebot
 Die Angebotsausgaben eines Bündelangebots richten sich nach Bündelangebot.Zeitraum:
