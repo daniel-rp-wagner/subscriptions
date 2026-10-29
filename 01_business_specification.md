@@ -74,8 +74,8 @@ Die Zuzahlung begleicht der Prämienempfänger bei der Lieferung der Prämie per
 | Prämien-Abo  | Werber      | Geworbener  | Geworbener          | Geworbener              | Werber             |
 | Geschenk-Abo | Schenkender | Beschenkter | Schenkender         | Beschenkter             | Schenkender        |
 
-**Vertragspartner:**
-Der Vertragspartner schließt den Abonnementvertrag mit dem Kunden. Unsere Anträge werden an den Vertragspartner (z.B. PVZ) weitergereicht. Die Antragsweitergabe ist nicht Teil dieser Spezifikation. Der Vertragspartner kümmert sich um die Auslieferung und die Verwaltung des Abonnements.
+**Anbieter:**
+Der Anbieter schließt den Abonnementvertrag mit dem Kunden. Unsere Anträge werden an den Anbieter (PVZ) weitergereicht. Die Antragsweitergabe ist nicht Teil dieser Spezifikation. Der Anbieter kümmert sich um die Auslieferung und die Verwaltung des Abonnements.
 ---
 
 ## 4. Fachliche Abläufe (Flows)
