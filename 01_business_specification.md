@@ -41,6 +41,7 @@ Kunden möchten bequem und kontinuierlich Zugriff auf relevante Inhalte, ohne ei
 ## 3. Geschäftsmodell
 
 **Grundprinzip:**
+
 Ein Kunde schließt ein Abonnement ab und erhält regelmäßig Zugriff auf Zeitschrifteninhalte, solange er bezahlt.
 Je länger das Abonnement abgeschlossen wird und je höher der damit generierte Auftragswert ist, desto höherwertig sind die Prämien die angeboten werden.
 Es gibt zwei Arten von Prämien: Geldwert und Sach-Prämien. Geldwert steht für den Wert eines Gutscheins oder Bargeld. Sach-Prämien, die den Wert des Abonnements übersteigen, können mit einer Zuzahlung ausgewählt werden.
@@ -75,6 +76,7 @@ Die Zuzahlung begleicht der Prämienempfänger bei der Lieferung der Prämie per
 | Geschenk-Abo | Schenkender | Beschenkter | Schenkender         | Beschenkter             | Schenkender        |
 
 **Anbieter:**
+
 Der Anbieter schließt den Abonnementvertrag mit dem Kunden. Unsere Anträge werden an den Anbieter (PVZ) weitergereicht. Die Antragsweitergabe ist nicht Teil dieser Spezifikation. Der Anbieter kümmert sich um die Auslieferung und die Verwaltung des Abonnements.
 
 ## 4. Fachliche Abläufe (Flows)
