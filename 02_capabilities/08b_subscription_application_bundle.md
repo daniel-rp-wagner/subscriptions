@@ -13,6 +13,7 @@ Hinweis: Für die freie Auswahl von Zeitschrift, Abonnement-Form und Hauptprämi
 
 ## Fachliche Eingabe
 
+* `Idempotency-Key`-Header (Pflicht; siehe BR-009)
 * Einreichungsart „Bündelangebot-Bestellung“
 * Bündelangebot
 * URL-Parameter-Wert (optional; wird nur gespeichert)
@@ -51,7 +52,7 @@ Die Antwort enthält Antragsnummer, Status, Zeitpunkt und die ermittelten Werte 
 * Werden zusätzlich Abonnement-Form, Zeitschrift oder Hauptprämie übergeben, wird der Antrag fachlich abgelehnt (Einreichungsart passt nicht zu den Daten).
 * Das Bündelangebot enthält eine Sachprämie, eine Geldwert-Prämie oder beides.
 * Die Angebotsausgaben ergeben sich aus BR-006; der Angebotspreis und der reguläre Preis werden damit nach BR-003 berechnet.
-* Der Zahlungsrhythmus ergibt sich gemäß BR-005 (bei Zeitraum „Ausgaben“ einmalig).
+* Der Zahlungsrhythmus ergibt sich gemäß BR-005. Bei Zeitraum „Ausgaben“ umfasst er den einmaligen Zahlungsrhythmus des Bündelangebots und den anschließenden, aus Bündelangebot.Laufzeit in Monaten ermittelten Abrechnungsrhythmus. Beide Angaben werden im Antrag festgeschrieben und ausgegeben.
 * Bei Zahlungsart Bankeinzug wird ein Bankeinzug-Rabatt nur berücksichtigt, wenn dieser für das Bündelangebot zulässig ist; die IBAN muss Format und Prüfziffer gemäß ISO 13616 erfüllen und aus einem Land des SEPA-Raums stammen.
 * Zugaben sind bei Bündelangeboten nicht vorgesehen. Ein angegebenes URL-Parameter-Wert wird gespeichert, es wird jedoch keine Zugabe ermittelt.
 * Partner ist optional; ist eine externe Partner-Id angegeben, die keinem Partner entspricht, wird kein Partner gespeichert.
@@ -63,13 +64,16 @@ Die Antwort enthält Antragsnummer, Status, Zeitpunkt und die ermittelten Werte 
 * Die Einreichungsart muss „Standard-Bestellung“ oder „Bündelangebot-Bestellung“ sein; fehlt sie oder ist sie unbekannt, wird der Antrag mit „Einreichungsart ungültig“ abgelehnt.
 * Textangaben werden ohne führende und nachfolgende Leerzeichen gespeichert; eine Angabe, die danach leer ist, gilt als nicht angegeben.
 * Keine beteiligte Person führt zu „Personenangaben unvollständig“; mehr Personen, als die Variante vorsieht, führen zu „Rollenverteilung ungültig“.
-* TODO: Ein Schutz gegen doppelte Einreichung desselben Antrags (z. B. durch Doppelklick) ist nicht festgelegt; jede Einreichung erzeugt einen eigenen Antrag.
+* Die Einreichung folgt BR-009: Wiederholungen mit demselben Idempotency-Key und identischen Daten liefern das ursprüngliche Ergebnis ohne einen weiteren Antrag; ein fehlender Schlüssel oder eine Wiederholung mit abweichenden Daten wird abgelehnt.
 
 ## Mögliche fachliche Ergebnisse
 
 | Ergebnis                             | Beschreibung                                                                             |
 | ------------------------------------- | ------------------------------------------------------------------------------------------ |
 | Antrag eingereicht                   | Der Abonnement-Antrag wurde erfolgreich angelegt.                                          |
+| Idempotente Wiederholung             | Das Ergebnis eines bereits erfolgreich eingereichten Antrags wird unverändert zurückgegeben. |
+| Idempotency-Key fehlt                | Der erforderliche Header fehlt oder ist leer.                                             |
+| Idempotency-Key-Konflikt             | Der Schlüssel wurde bereits mit abweichenden Eingabedaten erfolgreich verwendet.          |
 | Bündelangebot ungültig               | Das Bündelangebot ist nicht aktiv oder für die Bestellung nicht zulässig.                  |
 | Antrag enthält unzulässige Angaben   | Es wurden zusätzlich Abonnement-Form, Zeitschrift oder Hauptprämie übergeben.               |
 | Zahlungsdaten unvollständig          | Für die gewählte Zahlungsart fehlen erforderliche Angaben.                                 |

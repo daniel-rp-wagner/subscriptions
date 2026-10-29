@@ -53,10 +53,10 @@ Zu jedem Bündelangebot wird berechnet:
 ## Fachliche Regeln
 
 * Der Angebotspreis berechnet sich nach der Business Rule BR-003; die Angebotsausgaben ergeben sich aus BR-006.
-* Je nach Bündelangebot.Zeitraum ist entweder Bündelangebot.Laufzeit in Monaten oder Bündelangebot.Ausgaben gesetzt; das andere Feld ist leer.
+* Bündelangebot.Laufzeit in Monaten ist immer gesetzt und > 0. Bei Zeitraum „Monate“ ist Bündelangebot.Ausgaben leer; bei Zeitraum „Ausgaben“ ist Bündelangebot.Ausgaben gesetzt und > 0.
 * Bündelangebot.Geldwert ist der maßgebliche Geldwert; die referenzierte Geldwert-Prämie liefert Stammdaten, nicht den Betrag.
 * Bündelangebot.Name dient der internen Verwaltung und wird nicht ausgegeben.
-* Der Zahlungsrhythmus ergibt sich aus der BR-005 (bei Zeitraum „Ausgaben“ einmalig).
+* Der Zahlungsrhythmus ergibt sich aus BR-005. Bei Zeitraum „Ausgaben“ umfasst die Ausgabe den einmaligen Zahlungsrhythmus des Bündelangebots und den aus Bündelangebot.Laufzeit in Monaten ermittelten Rhythmus der anschließenden Abrechnung.
 
 ## Mögliche fachliche Ergebnisse
 

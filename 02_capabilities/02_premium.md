@@ -47,10 +47,11 @@ Zu jeder Prämie wird bereitgestellt:
 
 * Nur aktive Prämien werden berücksichtigt
 * Eine Prämie wird nur geliefert, wenn sie der Abonnement-Form zugeordnet ist und für die ermittelte Prämienbetragskategorie ein Prämienbetrag existiert
-* Die Prämienbetragskategorie wird aus der Kombination Zeitschrift × Abonnement-Form ermittelt; fehlt die Zuordnung, ist die Kombination unbekannt. Die Prämienbetragskategorie ist eine interne Kalkulationsgruppe und wird nicht ausgegeben
+* Bei prämienpflichtigen Abonnement-Formen wird die Prämienbetragskategorie aus der Kombination Zeitschrift × Abonnement-Form ermittelt; fehlt die Zuordnung, ist die Kombination ungültig. Die Prämienbetragskategorie ist eine interne Kalkulationsgruppe und wird nicht ausgegeben
 * Die Kombination ist ebenfalls unbekannt, wenn die Zeitschrift oder die Abonnement-Form inaktiv oder unbekannt ist oder die Abonnement-Form der Zeitschrift nicht zugewiesen ist
 * Die Prämien werden nach Prämien-Kategorie gruppiert ausgegeben. Eine Prämie, die mehreren Prämien-Kategorien zugeordnet ist, erscheint in jeder dieser Gruppen. Eine Prämie ohne Prämien-Kategorie wird nicht ausgegeben
-* Bei einer rabattbasierten Abonnement-Form (Abonnement-Form.Rabatt > 0) werden keine Prämien ausgegeben, da dort keine Hauptprämie gewählt werden darf
+* Bei einer rabattbasierten Abonnement-Form (Abonnement-Form.Rabatt > 0) werden keine Prämien ausgegeben, da dort keine Hauptprämie gewählt werden darf. Bei diesen Kombinationen darf die Prämienbetragskategorie fehlen; dies führt nicht zu einem Fehler, sondern zu einer leeren Prämienliste
+* Aktive prämienpflichtige Kombinationen erfüllen die Bestellbarkeitsregel BR-007
 * Die Gruppen sind nach Prämien-Kategorie.Reihenfolge sortiert. Der niedrigste Wert kommt zuerst
 * Die Prämien sind nach der Reihenfolge der Prämie innerhalb der Prämien-Kategorie sortiert. Der niedrigste Wert kommt zuerst; bei gleicher Reihenfolge wird alphabetisch nach Prämie.Name sortiert
 * Die Angebotsausgaben berechnen sich nach der Business Rule BR-001

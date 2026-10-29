@@ -2,11 +2,11 @@
 
 ## Fachlicher Zweck
 
-Die Fähigkeit ermöglicht es dem Seitenbesucher, Zeitschriften nach bestimmten Schlagworten zu finden.
+Die Fähigkeit ermöglicht es dem Seitenbesucher, Zeitschriften anhand ihres Namens und ihrer zugeordneten Schlagworte zu finden.
 
 Der Seitenbesucher kann dadurch:
 
-* Zeitschriften nach Themengebieten anzeigen lassen, um eine interessensbasierte Auswahl zu treffen.
+* Zeitschriften nach ihrem Namen oder nach Themengebieten finden, um eine passende Auswahl zu treffen.
 
 ## Fachliche Eingabe
 
@@ -31,7 +31,7 @@ Zu jeder Suche wird berechnet:
 * Nur aktive Zeitschriften werden angezeigt
 * Die Anzahl der Zeitschriften wird dynamisch berechnet und ausgegeben
 * Die Zeitschriften werden alphabetisch sortiert
-* Die Suche folgt den Anforderungen aus REQ-001 (inkl. exaktem Match nach Normalisierung)
+* Die Suche folgt REQ-001: Ein Treffer setzt die vollständige Übereinstimmung eines normalisierten Suchbegriffs mit einem normalisierten Wort aus Zeitschrift.Name oder einem zugeordneten Schlagwort voraus. Teilstring-Treffer sind ausgeschlossen.
 
 ## Mögliche fachliche Ergebnisse
 

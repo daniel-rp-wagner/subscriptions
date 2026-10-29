@@ -14,6 +14,7 @@ Hinweis: Für die Bestellung eines vordefinierten Bündelangebots siehe die Fäh
 
 ## Fachliche Eingabe
 
+* `Idempotency-Key`-Header (Pflicht; siehe BR-009)
 * Abonnement-Form
 * Zeitschrift
 * Hauptprämie (sofern für das Angebotsmodell erforderlich oder zulässig)
@@ -57,6 +58,7 @@ Die Antwort enthält Antragsnummer, Status, Zeitpunkt und die ermittelten Werte 
 * Die gewählte Zeitschrift muss für die gewählte Abonnement-Form zulässig sein.
 * Die Variante des Antrags ergibt sich aus der gewählten Abonnement-Form.
 * Laufzeit und Angebotsausgaben werden aus Abonnement-Form und Zeitschrift berechnet (BR-001).
+* Die berechneten Angebotsausgaben müssen mindestens 1 betragen (BR-008).
 * Der reguläre Preis wird nach BR-003 berechnet, der Angebotspreis nach BR-002.
 * Der Zahlungsrhythmus ergibt sich aus Abonnement-Form.Mindestlaufzeit gemäß BR-005.
 * Bei Zahlungsart Bankeinzug wird ein Bankeinzug-Rabatt berücksichtigt, sofern dieser für die Abonnement-Form zulässig ist (BR-004); die IBAN muss Format und Prüfziffer gemäß ISO 13616 erfüllen und aus einem Land des SEPA-Raums stammen.
@@ -75,13 +77,16 @@ Die Antwort enthält Antragsnummer, Status, Zeitpunkt und die ermittelten Werte 
 * Die Einreichungsart muss „Standard-Bestellung“ oder „Bündelangebot-Bestellung“ sein; fehlt sie oder ist sie unbekannt, wird der Antrag mit „Einreichungsart ungültig“ abgelehnt.
 * Textangaben werden ohne führende und nachfolgende Leerzeichen gespeichert; eine Angabe, die danach leer ist, gilt als nicht angegeben.
 * Keine beteiligte Person führt zu „Personenangaben unvollständig“; mehr Personen, als die Variante vorsieht, führen zu „Rollenverteilung ungültig“.
-* TODO: Ein Schutz gegen doppelte Einreichung desselben Antrags (z. B. durch Doppelklick) ist nicht festgelegt; jede Einreichung erzeugt einen eigenen Antrag.
+* Die Einreichung folgt BR-009: Wiederholungen mit demselben Idempotency-Key und identischen Daten liefern das ursprüngliche Ergebnis ohne einen weiteren Antrag; ein fehlender Schlüssel oder eine Wiederholung mit abweichenden Daten wird abgelehnt.
 
 ## Mögliche fachliche Ergebnisse
 
 | Ergebnis                             | Beschreibung                                                                                   |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | Antrag eingereicht                   | Der Abonnement-Antrag wurde erfolgreich angelegt.                                                |
+| Idempotente Wiederholung             | Das Ergebnis eines bereits erfolgreich eingereichten Antrags wird unverändert zurückgegeben.      |
+| Idempotency-Key fehlt                | Der erforderliche Header fehlt oder ist leer.                                                    |
+| Idempotency-Key-Konflikt             | Der Schlüssel wurde bereits mit abweichenden Eingabedaten erfolgreich verwendet.                 |
 | Einreichungsart ungültig             | Die Einreichungsart passt nicht zu den übergebenen Daten (z. B. Angaben zu einem Bündelangebot).  |
 | Abonnement-Form ungültig             | Die gewählte Abonnement-Form ist nicht aktiv oder nicht verfügbar.                                |
 | Zeitschrift ungültig                 | Die Zeitschrift ist nicht aktiv oder mit der gewählten Abonnement-Form nicht kombinierbar.        |
