@@ -76,7 +76,6 @@ Die Zuzahlung begleicht der Prämienempfänger bei der Lieferung der Prämie per
 
 **Anbieter:**
 Der Anbieter schließt den Abonnementvertrag mit dem Kunden. Unsere Anträge werden an den Anbieter (PVZ) weitergereicht. Die Antragsweitergabe ist nicht Teil dieser Spezifikation. Der Anbieter kümmert sich um die Auslieferung und die Verwaltung des Abonnements.
----
 
 ## 4. Fachliche Abläufe (Flows)
 
