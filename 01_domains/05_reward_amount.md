@@ -37,4 +37,5 @@ Die Prämienbetragskategorie ist eine interne Kalkulationsgruppe und bestimmt di
 **Beziehungen:**
 
 - Prämienbeträge sind jeweils einer Prämienbetragskategorie zugewiesen. (n:1)
-- Jeder Kombination aus Abonnement-Form und Zeitschrift ist höchstens eine Prämienbetragskategorie zugeordnet. Die Zuordnung ist eine Eigenschaft der Zuordnung Zeitschrift × Abonnement-Form und darf nur bei rabattbasierten Kombinationen fehlen. Bei prämienbasierten Kombinationen ist sie pflicht.
+- Jeder Kombination aus Abonnement-Form und Zeitschrift ist höchstens eine Prämienbetragskategorie zugeordnet. Die Zuordnung ist eine Eigenschaft der Zuordnung Zeitschrift × Abonnement-Form und darf nur bei rabattbasierten Kombinationen fehlen. Bei prämienpflichtigen Kombinationen ist sie Pflicht.
+- Für aktive prämienpflichtige Kombinationen muss zusätzlich mindestens eine aktive, der Abonnement-Form zugeordnete Hauptprämie mit einem gültigen Prämienbetrag in der zugeordneten Prämienbetragskategorie vorhanden sein (BR-007).

@@ -49,7 +49,7 @@ Ein Abonnement-Antrag repräsentiert den Wunsch eines Interessenten, ein Zeitsch
 | Bündelangebot              | Id und Name; bei Bündelangebot-Bestellung                                        | Sommeraktion  |
 | Zugabe                     | Id und Name; optionale Zugabe; nur bei Standard-Bestellung                       | + Kopfhörer   |
 | Zahlungsart                | Bankeinzug oder Rechnung                                                         | Bankeinzug    |
-| Zahlungsrhythmus           | vierteljährlich, jährlich, einmalig usw. (BR-005)                                | jährlich      |
+| Zahlungsrhythmus           | BR-005; bei Bündelangebot mit Zeitraum „Ausgaben“ einschließlich des Hinweises zur anschließenden Abrechnung | jährlich |
 | IBAN                       | nur bei Bankeinzug erforderlich⁷                                                 | DE12…         |
 | Kontoinhaber               | nur bei Bankeinzug erforderlich; Freitext, max. 100 Zeichen                      | Max Mustermann |
 | Zeitschrift                | Id und Name der gewählten bzw. vom Bündelangebot bestimmten Zeitschrift          | GARTEN        |
@@ -66,7 +66,8 @@ Ein Abonnement-Antrag repräsentiert den Wunsch eines Interessenten, ein Zeitsch
 | Status                     | Bearbeitungszustand des Antrags¹                                                 | Eingereicht   |
 
 ¹ **Hinweis**: vorerst nur der Wert: _Eingereicht_. Kann optional später erweitert werden um andere Status.  
-² **Hinweis**: Standard-Bestellung: Monate (= Abonnement-Form.Mindestlaufzeit). Bündelangebot-Bestellung: gemäß Bündelangebot.Zeitraum; bei „Monate“ ist die Laufzeit Bündelangebot.Laufzeit in Monaten, bei „Ausgaben“ ist sie Bündelangebot.Ausgaben.
+² **Hinweis**: Standard-Bestellung: Monate (= Abonnement-Form.Mindestlaufzeit). Bündelangebot-Bestellung: gemäß Bündelangebot.Zeitraum; bei „Monate“ ist die Laufzeit Bündelangebot.Laufzeit in Monaten, bei „Ausgaben“ ist sie Bündelangebot.Ausgaben. Bei Bündelangeboten mit Zeitraum „Ausgaben“ wird der aus Bündelangebot.Laufzeit in Monaten ermittelte Abrechnungsrhythmus nach den vereinbarten Ausgaben im Zahlungsrhythmus des Antrags festgeschrieben (BR-005).
+
 ⁷ **Hinweis**: ISO 13616, nur SEPA-Länder (Länge gemäß IBAN-Register); normalisiert (Großbuchstaben, ohne Leerzeichen)
 
 ### Prämie
