@@ -18,7 +18,7 @@ Ein Bündelangebot ist ein Komplettangebot aus Zeitschrift und Prämie vorausgew
 | Rabatt für Bankeinzug   | ja/nein                                                                 | nein                             |
 | Geldwert                | Maßgeblicher Gutschein- / Bargeldwert der Geldwert-Prämie               | 55                               |
 
-¹ **Hinweis**: einer der Werte: _Monate oder Ausgaben_
+¹ **Hinweis**: einer der Werte: _Monate oder Ausgaben_  
 ² **Hinweis**: Bei Zeitraum „Monate“ sowohl Angebotslaufzeit als auch anschließender Abrechnungsrhythmus, bei Zeitraum „Ausgaben“ nur der anschließende Abrechnungsrhythmus.
 
 **Beziehungen:**
