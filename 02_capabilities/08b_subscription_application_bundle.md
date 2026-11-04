@@ -13,7 +13,6 @@ Hinweis: Für die freie Auswahl von Zeitschrift, Abonnement-Form und Hauptprämi
 
 ## Fachliche Eingabe
 
-* `Idempotency-Key`-Header (Pflicht; siehe BR-009)
 * Einreichungsart „Bündelangebot-Bestellung“
 * Bündelangebot
 * URL-Parameter-Wert (optional; wird nur gespeichert)
@@ -64,7 +63,6 @@ Die Antwort enthält Antragsnummer, Status, Zeitpunkt und die ermittelten Werte 
 * Die Einreichungsart muss „Standard-Bestellung“ oder „Bündelangebot-Bestellung“ sein; fehlt sie oder ist sie unbekannt, wird der Antrag mit „Einreichungsart ungültig“ abgelehnt.
 * Textangaben werden ohne führende und nachfolgende Leerzeichen gespeichert; eine Angabe, die danach leer ist, gilt als nicht angegeben.
 * Keine beteiligte Person führt zu „Personenangaben unvollständig“; mehr Personen, als die Variante vorsieht, führen zu „Rollenverteilung ungültig“.
-* Die Einreichung folgt BR-009: Wiederholungen mit demselben Idempotency-Key und identischen Daten liefern das ursprüngliche Ergebnis ohne einen weiteren Antrag; ein fehlender Schlüssel oder eine Wiederholung mit abweichenden Daten wird abgelehnt.
 
 ## Mögliche fachliche Ergebnisse
 
