@@ -198,17 +198,6 @@ Für rabattbasierte Abonnement-Formen (Abonnement-Form.Rabatt > 0) gilt diese Vo
 
 Für jede aktive Kombination aus Zeitschrift und Abonnement-Form muss die Berechnung nach BR-001 mindestens eine Angebotsausgabe ergeben. Die Stammdatenpflege lehnt Änderungen ab, die diese Voraussetzung verletzen würden. Dies wird insbesondere bei Zuordnung oder Aktivierung von Zeitschrift und Abonnement-Form sowie bei Änderungen von Zeitschrift.Ausgaben oder Abonnement-Form.Mindestlaufzeit geprüft. Inaktive Stammdaten dürfen zur Vorbereitung unvollständig sein.
 
-### BR-009 Idempotente Antragseinreichung
-
-Jede Einreichung eines Abonnement-Antrags muss einen nicht leeren, für die jeweilige beabsichtigte Antragstellung eindeutigen `Idempotency-Key`-Header enthalten. Diese Regel gilt für Standard- und Bündelangebot-Bestellungen gleichermaßen.
-
-Bei der ersten erfolgreichen Einreichung wird der Schlüssel dauerhaft eindeutig der Antragsnummer und den fachlich normalisierten Eingabedaten zugeordnet.
-
-* Wird derselbe Schlüssel mit fachlich identischen Eingabedaten erneut verwendet, wird das ursprüngliche erfolgreiche Ergebnis einschließlich Antragsnummer zurückgegeben; es wird kein weiterer Antrag angelegt.
-* Wird derselbe Schlüssel mit abweichenden Eingabedaten erneut verwendet, wird die Einreichung mit „Idempotency-Key-Konflikt“ abgelehnt.
-* Gleichzeitige Einreichungen mit demselben Schlüssel dürfen höchstens einen Antrag erzeugen.
-* Für eine neue beabsichtigte Antragstellung muss ein neuer Schlüssel verwendet werden.
-
 ---
 
 ## 6. Abgrenzung (Nicht Teil des Geschäftsmodells)
