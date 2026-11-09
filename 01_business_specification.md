@@ -64,12 +64,12 @@ Beispiel:
 
 Die Zuzahlung begleicht der Prämienempfänger bei der Lieferung der Prämie per Nachnahme.
 
-**Varianten:**
+**Abonnement-Varianten:**
  * **Mein-Abo**: Ein Abonnement, bei dem der Seitenbesucher eine Zeitschrift für sich selbst auswählt. Der Abonnent ist Zeitschriftenempfänger, Rechnungsempfänger sowie Prämienempfänger. Die Abonnement-Formen unterscheiden sich anhand der Laufzeit. Einzelne Abonnement-Formen können mit einem zusätzlichen Rabatt versehen sein. Beim Mein-Abo ist nur eine Person involviert.
  * **Prämien-Abo**: Beim Prämien-Abo kann eine Person einen Zeitschriftenempfänger werben. Der Abonnent ist Prämienempfänger, der Zeitschriftenempfänger ist der Rechnungsempfänger und bezahlt das Abonnement. Beim Prämien-Abo gibt es immer zwei beteiligte Personen.
  * **Geschenk-Abo**: Das Geschenk-Abo ermöglicht es, dass eine Person einer anderen ein Zeitschriften-Abonnement schenkt. Der Abonnent ist Rechnungsempfänger und Prämienempfänger. Der Zeitschriftenempfänger erhält die Zeitschrift. Beim Geschenk-Abo gibt es immer zwei beteiligte Personen.
 
-| Abo-Variante | Person 1    | Person 2    | Rechnungsempfänger? | Zeitschriftenempfänger? | Prämienempfänger?  |
+| Abonnement-Variante | Person 1    | Person 2    | Rechnungsempfänger? | Zeitschriftenempfänger? | Prämienempfänger?  |
 | ------------ | ----------- | ----------- | ------------------- | ----------------------- | ------------------ |
 | Mein-Abo     | Kunde       | —           | Kunde               | Kunde                   | Kunde              |
 | Prämien-Abo  | Werber      | Geworbener  | Geworbener          | Geworbener              | Werber             |
