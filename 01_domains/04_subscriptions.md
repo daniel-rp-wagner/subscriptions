@@ -16,11 +16,12 @@ Zeitschriften können entweder über verschiedene Zeiträume selbst bezogen werd
 | Kurzbeschreibung      |                                                                                  |                  |
 | Langbeschreibung      |                                                                                  |                  |
 | Variante              | Kennzeichnet die Abonnement-Variante¹                                            | Mein-Abo         |
-| Mindestlaufzeit       | in Monaten; einer der Werte 3, 6, 12, 24                                         | 12               |
+| Mindestlaufzeit       | in Monaten²                                                                      | 12               |
 | Rabatt                | in Prozent, ganzzahlig 0–100; Angebotsmodell abgeleitet: 0 = prämienpflichtig, > 0 = rabattbasiert | 30               |
 | Rabatt für Bankeinzug | ja/nein                                                                          | nein             |
 
-¹ **Hinweis**: einer der Werte: _Prämien-Abo, Mein-Abo, Geschenk-Abo_
+¹ **Hinweis**: einer der Werte: _Prämien-Abo, Mein-Abo, Geschenk-Abo_  
+² **Hinweis**: einer der Werte 3, 6, 12, 24
 
 **Beziehungen:**
 
